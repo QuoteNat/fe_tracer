@@ -22,7 +22,7 @@ pub fn length(vec: Vec3D) -> f64 {
 }
 
 /// Returns the length squared of a given vector
-pub fn lengthSquared(vec: Vec3D) -> f64 {
+pub fn length_squared(vec: Vec3D) -> f64 {
     vec.x*vec.x + vec.y * vec.y + vec.z*vec.z
 }
 
@@ -119,4 +119,47 @@ impl ops::Mul<Vec3D> for f64 {
             z: rhs.z * self,
         }
     }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_dot() {
+        let lhs = Vec3D{x: 0.0, y: 3.0, z: -7.0};
+        let rhs = Vec3D{x: 2.0, y: 3.0, z: 1.0};
+        assert_eq!(dot(lhs, rhs), 2.0);
+    }
+
+    #[test]
+    fn test_length() {
+        let vec = Vec3D{x: 3.0, y: -4.0, z: 2.0};
+        assert_eq!(length(vec),  5.385164807134504);
+    }
+
+    #[test]
+    fn test_length_squared() {
+        let vec = Vec3D{x: 3.0, y: -4.0, z: 2.0};  
+        assert_eq!(length_squared(vec), 29.0);
+    }
+
+    #[test]
+    fn test_distance() {
+        let lhs = Vec3D{x: 0.0, y: 3.0, z: -7.0};
+        let rhs = Vec3D{x: 2.0, y: 3.0, z: 1.0};
+        assert_eq!(distance(lhs, rhs), 8.246211251235321);
+    }
+
+    // #[test]
+    // fn test_component_mult() {
+    //     let lhs = Vec3D{x: 0.0, y: 3.0, z: -7.0};
+    //     let rhs = Vec3D{x: 2.0, y: 3.0, z: 1.0};
+    //     let correct = Vec3D {
+    //         x: 0.0,
+    //         y: 9.0,
+    //         z: -7.0
+    //     };
+    //     assert_eq!(distance(lhs, rhs), correct);
+    // }
 }
