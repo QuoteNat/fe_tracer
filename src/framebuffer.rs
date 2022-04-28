@@ -1,8 +1,8 @@
-use crate::vector::Vec3D;
+use crate::vector;
 
 pub struct Framebuffer {
     height: i32,
     width: i32,
-    buffer: Vec<Vec3D>,
+    buffer: Vec<vector::Vec3D>,
 }
 
