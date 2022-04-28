@@ -38,6 +38,7 @@ pub fn component_mult(lhs: Vec3D, rhs: Vec3D) -> Vec3D {
     }
 }
 
+/// Divides a Vec3D by a scalar
 impl ops::Div<f64> for Vec3D {
     type Output = Self;
 
@@ -50,6 +51,7 @@ impl ops::Div<f64> for Vec3D {
     }
 }
 
+/// Adds a Vec3D to a Vec3D
 impl ops::Add<Vec3D> for Vec3D {
     type Output = Self;
 
@@ -58,6 +60,19 @@ impl ops::Add<Vec3D> for Vec3D {
             x: self.x+rhs.x, 
             y: self.y+rhs.y, 
             z: self.z+rhs.z, 
+        }
+    }
+}
+
+/// Subtracts rhs from a Vec3D
+impl ops::Sub<Vec3D> for Vec3D {
+    type Output = Self;
+
+    fn sub(self, rhs: Vec3D) -> Self::Output {
+        Vec3D {
+            x: self.x-rhs.x, 
+            y: self.y-rhs.y, 
+            z: self.z-rhs.z, 
         }
     }
 }
