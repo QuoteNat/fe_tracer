@@ -21,6 +21,11 @@ pub fn length(vec: Vec3D) -> f64 {
     (vec.x*vec.x + vec.y * vec.y + vec.z*vec.z).sqrt()
 }
 
+/// Returns the length squared of a given vector
+pub fn lengthSquared(vec: Vec3D) -> f64 {
+    vec.x*vec.x + vec.y * vec.y + vec.z*vec.z
+}
+
 /// Returns the distance between two vectors
 pub fn distance(lhs: Vec3D, rhs: Vec3D) -> f64 {
     let x = lhs.x-rhs.x;
