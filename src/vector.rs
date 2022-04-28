@@ -89,3 +89,29 @@ impl ops::Mul<Vec3D> for Vec3D {
         }
     }
 }
+
+/// Cross multiplication
+impl ops::Mul<f64> for Vec3D {
+    type Output = Self;
+
+    fn mul(self, rhs: f64) -> Self::Output {
+        Vec3D {
+            x: self.x * rhs,
+            y: self.y * rhs,
+            z: self.z * rhs,
+        }
+    }
+}
+
+/// Cross multiplication
+impl ops::Mul<Vec3D> for f64 {
+    type Output = Vec3D;
+
+    fn mul(self, rhs: Vec3D) -> Self::Output {
+        Vec3D {
+            x: rhs.x * self,
+            y: rhs.y * self,
+            z: rhs.z * self,
+        }
+    }
+}
