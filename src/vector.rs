@@ -29,6 +29,15 @@ pub fn distance(lhs: Vec3D, rhs: Vec3D) -> f64 {
     (x*x+y*y+z*z).sqrt()
 }
 
+/// Performs component wise multiplication of two vectors
+pub fn component_mult(lhs: Vec3D, rhs: Vec3D) -> Vec3D {
+    Vec3D {
+        x: lhs.x*rhs.x, 
+        y: lhs.y*rhs.y, 
+        z: lhs.z*rhs.z, 
+    }
+}
+
 impl ops::Div<f64> for Vec3D {
     type Output = Self;
 
