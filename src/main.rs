@@ -1,4 +1,5 @@
-use Framebuffer::Framebuffer;
+mod framebuffer;
+mod vector;
 
 fn main() {
     println!("Hello, world!");

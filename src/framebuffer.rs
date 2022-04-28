@@ -1,14 +1,8 @@
-use std::fs::File;
-use Vector::Vec3D;
+use crate::vector::Vec3D;
 
-mod Framebuffer {
-    struct Framebuffer {
-        height: i32;
-        width: i32;
-        buffer: Vec<Vec::Vec3D>;
-    }
-
-    impl Framebuffer {
-        
-    }
+pub struct Framebuffer {
+    height: i32,
+    width: i32,
+    buffer: Vec<Vec3D>,
 }
+
