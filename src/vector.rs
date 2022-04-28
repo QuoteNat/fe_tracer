@@ -49,3 +49,15 @@ impl ops::Div<f64> for Vec3D {
         Vec3D {x: self.x / rhs, y: self.y / rhs, z: self.z / rhs}
     }
 }
+
+impl ops::Add<Vec3D> for Vec3D {
+    type Output = Self;
+
+    fn add(self, rhs: Vec3D) -> Self::Output {
+        Vec3D {
+            x: self.x+rhs.x, 
+            y: self.y+rhs.y, 
+            z: self.z+rhs.z, 
+        }
+    }
+}
